@@ -1,0 +1,21 @@
+MODEL EVALUATION RESULTS
+======================================================================
+
+Model: Linear Regression
+MAE : 178.41
+MSE : 42871.96
+RMSE: 207.06
+R2  : -0.0185
+
+Model: Decision Tree
+MAE : 273.70
+MSE : 113156.10
+RMSE: 336.39
+R2  : -1.6883
+
+Model: Random Forest
+MAE : 167.92
+MSE : 38772.13
+RMSE: 196.91
+R2  : 0.0789
+

@@ -8,26 +8,164 @@ The format is based on the principles of Semantic Versioning.
 
 # [Unreleased]
 
-## Added
-
-* Machine Learning preprocessing workflow.
-* Model training workflow.
-* Model evaluation workflow.
-* Prediction workflow.
-* Additional Machine Learning tests.
-* Additional reports and metrics.
-
 ## Planned
 
 * Hyperparameter tuning.
 * Cross-validation.
 * Advanced feature engineering.
 * Additional regression models.
-* Model comparison reports.
 * Prediction API.
 * Web application.
 * Mobile application.
 * Cloud deployment.
+
+---
+
+# [0.2.0] - 2026-09-06
+
+## Machine Learning
+
+### Added
+
+* Added complete Machine Learning preprocessing workflow.
+* Added numerical and categorical feature preprocessing.
+* Added target column handling.
+* Added Gender encoding.
+* Added processed dataset generation.
+* Added model training workflow.
+* Added model evaluation workflow.
+* Added best model selection.
+* Added saved model artifact generation.
+* Added prediction workflow.
+* Added Machine Learning evaluation metrics.
+
+### Models
+
+The following regression models are currently implemented:
+
+* Linear Regression.
+* Decision Tree Regressor.
+* Random Forest Regressor.
+
+### Model Evaluation
+
+Added evaluation using:
+
+* Mean Absolute Error (MAE).
+* Mean Squared Error (MSE).
+* Root Mean Squared Error (RMSE).
+* R² Score.
+
+Current evaluation results:
+
+| Model             |    MAE |       MSE |   RMSE |      R² |
+| ----------------- | -----: | --------: | -----: | ------: |
+| Linear Regression | 178.41 |  42871.96 | 207.06 | -0.0185 |
+| Decision Tree     | 273.70 | 113156.10 | 336.39 | -1.6883 |
+| Random Forest     | 167.92 |  38772.13 | 196.91 |  0.0789 |
+
+The Random Forest Regressor currently provides the best R² score and is selected as the best-performing model.
+
+---
+
+## Reports
+
+### Added
+
+Added automated report generation through:
+
+```text
+scripts/generate_reports.py
+```
+
+Generated reports include:
+
+```text
+reports/
+├── metrics/
+│   ├── model_metrics.csv
+│   ├── model_metrics.txt
+│   └── best_model.txt
+│
+├── matrices/
+│   ├── correlation_matrix.csv
+│   └── feature_matrix.csv
+│
+└── tables/
+    ├── dataset_summary.csv
+    ├── descriptive_statistics.csv
+    ├── target_correlations.csv
+    └── model_comparison.csv
+```
+
+---
+
+## Notebook Reporting
+
+### Added
+
+Added notebook export workflow through:
+
+```text
+scripts/export_notebooks.py
+```
+
+Notebook reports are exported to:
+
+```text
+reports/notebooks/
+```
+
+The project notebooks include:
+
+```text
+01_1_data_exploration.ipynb
+01_2_data_exploration.ipynb
+01_3_data_visualization.ipynb
+02_data_analysis.ipynb
+03_machine_learning.ipynb
+```
+
+The notebooks cover:
+
+* Dataset exploration.
+* Data quality validation.
+* Descriptive statistics.
+* Target analysis.
+* Correlation analysis.
+* Outlier analysis.
+* Data visualization.
+* Machine Learning experiments.
+* Model evaluation.
+
+---
+
+## Testing
+
+### Added
+
+Expanded testing coverage for the project.
+
+Current test files:
+
+```text
+tests/
+├── test_imports.py
+├── test_data_loader.py
+├── test_data_analysis.py
+├── test_data_cleaning.py
+└── test_visualization.py
+```
+
+The tests verify:
+
+* Required library imports.
+* Dataset loading.
+* Dataset structure.
+* Dataset validation.
+* Data analysis functions.
+* Data cleaning functions.
+* Visualization generation.
 
 ---
 
@@ -199,6 +337,7 @@ Additional documentation:
 
 ```text
 docs/
+
 ├── DATA_DICTIONARY.md
 └── MODEL_CARD.md
 ```
@@ -211,6 +350,7 @@ Initial validation produced the following results:
 
 ```text
 Dataset:
+
 ├── Rows              : 200
 ├── Columns           : 10
 ├── Total Values      : 2,000
@@ -224,36 +364,33 @@ No IQR-based numerical outliers were detected during the initial dataset analysi
 
 # Future Releases
 
-Future versions may include:
-
-```text
-0.2.0
-```
+## 0.3.0
 
 Potential additions:
 
-* Complete preprocessing pipeline.
-* Multiple Machine Learning models.
-* Model evaluation.
-* Model comparison.
-* Best model selection.
-* Saved model artifacts.
-
-Future versions may also include:
-
-```text
-0.3.0
-```
-
-Potential additions:
-
-* Prediction pipeline.
+* Hyperparameter tuning.
+* Cross-validation.
+* Advanced feature engineering.
+* Additional regression models.
+* Improved model comparison.
 * Prediction test cases.
 * REST API.
-* Application integration.
+* Prediction service integration.
+
+## 0.4.0
+
+Potential additions:
+
+* Web application.
+* Mobile application.
+* Cloud deployment.
+* Production model serving.
+* Model monitoring.
 
 ---
 
 # Notes
 
 The changelog will be updated whenever a significant feature, fix, refactor, documentation change, or Machine Learning experiment is added to the project.
+
+Model evaluation results are documented using the actual results produced by the current dataset and implementation. No artificial modification of the target values or evaluation results is performed.
